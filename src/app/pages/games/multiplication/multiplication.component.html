@@ -1,0 +1,20 @@
+<sb-layout-stats>
+    <sb-stats-head title="Tabliczka mnożenia" [hideBreadcrumbs]="false"></sb-stats-head>
+    <div class="container">
+        <div class="actions">
+            <button class="btn btn-primary btn-lg" [disabled]='isStarted' (click)='startGame()'>Start</button>
+            <button class="btn btn-danger btn-lg" [disabled]='!isStarted' (click)='endGame()'>Zakończ</button>
+        </div>
+        <div class="game" *ngIf="isStarted">
+            <div id="sq" class="square"><span>{{first}}</span></div>
+            <div id="sq1" class="square"><span>X</span></div>
+            <div id="sq2" class="square"><span>{{second}}</span> </div>
+            <div id="sq3" class="square"><span>{{time}}s</span> </div>
+            <div id="sq4" class="square"><span>=</span> </div>
+            <input type="text" [(ngModel)]='answer' (keyup.enter)='check($event)'>
+        </div>
+        <p *ngIf="wosStarted">Liczba zdobytych minut: {{points}} </p>
+        <p *ngIf="info">Osiagnieto dzienny limit czasu!</p>
+    </div>
+
+</sb-layout-stats>

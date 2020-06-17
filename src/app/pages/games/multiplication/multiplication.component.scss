@@ -1,0 +1,62 @@
+.container{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+.square {
+    position: relative; 
+    width: 200px; 
+    height: 200px; 
+    margin: 0 auto; 
+}
+span{
+    font-size: 100px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+ }
+    
+ #sq{
+    float: left;
+    margin-right: 30px;
+    background-color: #af2285;
+    
+ }
+ #sq1{
+    float: left;
+    background-color: #168b12;
+    margin-right: 30px;
+ }
+ #sq2{
+    float: left;
+    background-color: #b497c7;
+    margin-right: 70px;
+     }
+#sq3{
+    float: left;
+    background-color: #b497c7;
+    // visibility:hidden;
+    
+         }
+#sq4{
+            
+    float: left;
+    background-color: #b497c7;
+    margin-right: 30px;
+            
+        }
+ input{
+    width: 200px; 
+    height: 200px;
+    font-size: 100px;
+    
+ }
+
+ .custom-time{
+     float: right;
+ }
+ 
