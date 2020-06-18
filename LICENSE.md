@@ -1,7 +1,5 @@
 MIT License
 
-ok
-
 Copyright (c) 2017 Creative Tim (www.creative-tim.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
