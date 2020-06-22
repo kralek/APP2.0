@@ -11,6 +11,7 @@ import { UserComponent }            from '../../pages/user/user.component';
 import { GamesComponent } from './../../pages/games/games.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from 'app/pages/login/login.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     DashboardComponent,
     UserComponent,
     GamesComponent,
-    Multiplication
+    Multiplication,
+    LoginComponent
   ],
   providers:[]
 })
