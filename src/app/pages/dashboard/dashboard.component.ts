@@ -93,31 +93,23 @@ export class DashboardComponent implements OnInit{
       const badAnsByDay = this.getBadAnsDataByDate()
       const dateLabels = this.getDateLabels();
 
-      console.log(goodAnsByDay, badAnsByDay);
-
       this.chartColor = "#FFFFFF";
 
       this.canvas = document.getElementById("chartHours");
       this.ctx = this.canvas.getContext("2d");
 
       this.chartHours = new Chart(this.ctx, {
-        type: 'bar',
+        type: 'line',
 
         data: {
-          labels: dateLabels,
+          labels: ['a', 'b'],//dateLabels,
           datasets: [{
               borderColor: "#6bd098",
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: goodAnsByDay
+              data: [4,8]//goodAnsByDay
             },
             {
               borderColor: "#f17e5d",
-              pointRadius: 0,
-              pointHoverRadius: 0,
-              borderWidth: 3,
-              data: badAnsByDay
+              data: [2,3]//badAnsByDay
             }
           ]
         },
@@ -135,16 +127,12 @@ export class DashboardComponent implements OnInit{
 
               ticks: {
                 fontColor: "#9f9f9f",
-                beginAtZero: false,
-                maxTicksLimit: 5,
-                //padding: 20
               },
               gridLines: {
                 drawBorder: false,
                 zeroLineColor: "#ccc",
                 color: 'rgba(255,255,255,0.05)'
               }
-
             }],
 
             xAxes: [{
