@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'landing',
   moduleId: module.id,
   templateUrl: 'landing-page.component.html',
-  styleUrls: ['landing-page.component.css']
+  styleUrls: ['./landing-page.component.css']
 })
 
 export class LandingPageComponent implements OnInit {
