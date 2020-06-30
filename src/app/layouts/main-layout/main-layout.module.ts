@@ -8,6 +8,7 @@ import { LoginComponent } from 'app/pages/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainLayoutRoutes } from './main-layout.routing';
 import { LandingPageComponent } from 'app/pages/landing-page/landing-page.component';
+import { RegistrationComponent } from './../../pages/registration/registration.component';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { LandingPageComponent } from 'app/pages/landing-page/landing-page.compon
   ],
   declarations: [
     LoginComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    RegistrationComponent
   ],
   providers:[]
 })

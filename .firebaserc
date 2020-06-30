@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "omnibusiq": {
+      "hosting": {
+        "pd-free-angularcli": [
+          "omnibusiq"
+        ]
+      }
+    }
+  }
+}
