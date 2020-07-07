@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
@@ -24,13 +24,14 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // this.auth.signInWithPopup(new auth.GoogleAuthProvider());
+     const {email, password} = this.form.value;
+     this.auth.signInWithEmailAndPassword(email, password);
   }
   logout() {
     this.auth.signOut();
   }
 
-  onSubmit(form: any){
-    console.log(form);
+  onSubmit(event: any){
+    this.login(); 
   }
 }

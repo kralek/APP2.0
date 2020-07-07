@@ -8,7 +8,7 @@
     </div>
 
     <!-- Login Form -->
-    <form [formGroup]='form' (ngSubmit)="onSubmit()">
+    <form [formGroup]='form' (ngSubmit)="onSubmit($event)">
       <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" formControlName="password">
       <input type="submit" class="fadeIn fourth" value="Log In">

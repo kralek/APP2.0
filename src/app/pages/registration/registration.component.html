@@ -10,12 +10,20 @@
       <!-- Login Form -->
       <form [formGroup]='form' (ngSubmit)="onSubmit($event)">
         <input type="text" id="name" class="fadeIn second" name="name" placeholder="Give your name" formControlName="name">
+        <span class='d-block' *ngIf='form.get("name").errors && form.get("name").errors.required && (form.get("name").dirty || form.get("name").touched)'>To pole jest wymagane!</span>
+        <span class='d-block' *ngIf='form.get("name").errors && form.get("name").errors.minlength && (form.get("name").dirty || form.get("name").touched)'>Podane imie musi mieć przynajmniej 3 znaki!</span>
 
         <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
+        <span></span>
 
-        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" formControlName="password">
-        <input type="password" id="password" class="fadeIn third" name="password-repeat" placeholder="Repeat Password" formControlName="passwordRepeat">
-
+        <div [formGroup]='passwordGroup'>
+          <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" formControlName="password">
+          <span></span>
+  
+          <input type="password" id="password-repeat" class="fadeIn third" name="password-repeat" placeholder="Repeat Password" formControlName="passwordRepeat">
+          <span class='d-block' *ngIf='passwordGroup.errors && passwordGroup.errors.notSame && (passwordGroup.dirty || passwordGroup.touched)'>Podane imie musi mieć przynajmniej 3 znaki!</span>
+  
+        </div>
         <input type="submit" class="fadeIn fourth" value="Create an account">
       </form>
 

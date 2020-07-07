@@ -17,5 +17,6 @@ export const AdminLayoutRoutes: Routes = [
         component: Multiplication
       }
     ]
-  }
+  },
+  { path: '*', redirectTo: 'dashboard' },
 ];
