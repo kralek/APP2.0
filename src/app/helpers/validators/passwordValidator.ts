@@ -1,9 +1,8 @@
-import { FormGroup } from '@angular/forms';
+import { FormGroup, AbstractControl, ValidationErrors } from '@angular/forms';
 
-export function checkPasswords(group: FormGroup) { // here we have the 'passwords' group
-console.log(group);
-  let pass = group.get('password').value;
-  let confirmPass = group.get('passwordRepeat').value;
+export function checkPasswords(control: AbstractControl):ValidationErrors { // here we have the 'passwords' group
+  let pass = control.get('password').value;
+  let confirmPass = control.get('passwordRepeat').value;
 
   return pass === confirmPass ? null : { notSame: true }     
 }

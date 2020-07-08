@@ -10,7 +10,12 @@
     <!-- Login Form -->
     <form [formGroup]='form' (ngSubmit)="onSubmit($event)">
       <input type="email" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
+      <span class='d-block' *ngIf='form.get("email").errors && form.get("email").errors.email && (form.get("email").dirty || form.get("email").touched)'>Podaj poprawny email!</span>
+      <span class='d-block' *ngIf='form.get("email").errors && form.get("email").errors.required && (form.get("email").dirty || form.get("email").touched)'>To pole jest wymagane!</span>
+      
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" formControlName="password">
+      <span class='d-block' *ngIf='form.get("password").errors && form.get("password").errors.required && (form.get("password").dirty || form.get("password").touched)'>Pole hasła nie może byc puste!</span>
+
       <input type="submit" class="fadeIn fourth" value="Log In">
     </form>
 
