@@ -29,6 +29,7 @@
           <span class='d-block' *ngIf='form.get(["passwordGroup", "passwordRepeat"]).errors && form.get(["passwordGroup", "passwordRepeat"]).errors.minlength && (form.get(["passwordGroup", "passwordRepeat"]).dirty || form.get(["passwordGroup", "passwordRepeat"]).touched)'>Podane hasło musi zawierać minimm 6 znaków!</span>
   
         </div>
+        <span *ngIf='isErrorVisible'>{{errorMessage}}</span>
         <input type="submit" class="fadeIn fourth" value="Create an account">
       </form>
 

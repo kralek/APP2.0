@@ -12,6 +12,8 @@ import { GamesComponent } from './../../pages/games/games.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from 'app/pages/login/login.component';
+import { CanActivateAdminLayout } from 'app/guards/canActiveInAdminLayout';
+
 
 @NgModule({
   imports: [
@@ -27,7 +29,7 @@ import { LoginComponent } from 'app/pages/login/login.component';
     Multiplication,
     LoginComponent
   ],
-  providers:[]
+  providers:[CanActivateAdminLayout]
 })
 
 export class AdminLayoutModule {}
