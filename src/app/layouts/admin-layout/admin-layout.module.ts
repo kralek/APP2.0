@@ -12,7 +12,8 @@ import { GamesComponent } from './../../pages/games/games.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from 'app/pages/login/login.component';
-import { CanActivateAdminLayout } from 'app/guards/canActiveInAdminLayout';
+import { CanActivateAdminLayout } from 'app/guards/can-active-in-admin-layout';
+import { CanActivateAsAdmin } from 'app/guards/can-active-as-admin';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { CanActivateAdminLayout } from 'app/guards/canActiveInAdminLayout';
     Multiplication,
     LoginComponent
   ],
-  providers:[CanActivateAdminLayout]
+  providers:[CanActivateAdminLayout, CanActivateAsAdmin]
 })
 
 export class AdminLayoutModule {}

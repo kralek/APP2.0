@@ -1,7 +1,7 @@
 import { ConfingService } from './services/get-config/get-config.service';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ToastrModule } from "ngx-toastr";
 
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -29,7 +29,8 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
   imports: [
     BrowserAnimationsModule,
     RouterModule.forRoot(AppRoutes, {
-      useHash: true
+      useHash: true,
+      preloadingStrategy: PreloadAllModules
     }),
     SidebarModule,
     NavbarModule,

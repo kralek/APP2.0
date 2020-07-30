@@ -6,33 +6,16 @@ import { MainLayoutComponent } from "./layouts/main-layout/main-layout.component
 export const AppRoutes: Routes = [
   {
     path: "",
-    redirectTo: "dashboard",
-    pathMatch: "full",
-  },
-  {
-    path: "",
     component: MainLayoutComponent,
-    children: [
-      {
-        path: "",
-        loadChildren:
-          "./layouts/main-layout/main-layout.module#MainLayoutModule"
-      }
-    ]
+    loadChildren: () => import("./layouts/main-layout/main-layout.module").then(m => m.MainLayoutModule) 
   },
   {
     path: "user",
     component: AdminLayoutComponent,
-    children: [
-      {
-        path: "",
-        loadChildren:
-          "./layouts/admin-layout/admin-layout.module#AdminLayoutModule"
-      }
-    ]
+    loadChildren: () => import("./layouts/admin-layout/admin-layout.module").then(m => m.AdminLayoutModule) 
   },
   {
     path: "**",
-    redirectTo: "dashboard"
+    redirectTo: ""
   }
 ];

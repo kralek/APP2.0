@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class LoginComponent implements OnInit {
-  constructor(public auth: AngularFireAuth, public route: Router) {
+  constructor(private auth: AngularFireAuth, public route: Router) {
     this.form = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required]),

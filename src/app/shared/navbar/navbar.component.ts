@@ -11,6 +11,7 @@ import {
 import { ROUTES } from '../../sidebar/sidebar.component';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   moduleId: module.id,
@@ -34,7 +35,8 @@ export class NavbarComponent implements OnInit {
     location: Location,
     private renderer: Renderer2,
     private element: ElementRef,
-    private router: Router
+    private router: Router,
+    public auth: AngularFireAuth
   ) {
     this.location = location;
     this.nativeElement = element.nativeElement;
@@ -54,6 +56,11 @@ export class NavbarComponent implements OnInit {
     this.router.events.subscribe(event => {
       this.sidebarClose();
     });
+  }
+
+  logout() {
+    this.auth.signOut();
+    this.router.navigate(['']);
   }
 
   getTitle() {

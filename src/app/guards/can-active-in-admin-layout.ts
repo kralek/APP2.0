@@ -12,7 +12,6 @@ export class CanActivateAdminLayout implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree {
     return this.auth.currentUser.then(user => {
-        console.log(user);
         return true;
     }).catch(error => false);
   }
